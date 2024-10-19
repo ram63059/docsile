@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaArrowLeft } from "react-icons/fa6";
+
 
 type Message = {
   imageUrl: string;
@@ -90,10 +92,14 @@ const MessageList: React.FC = () => {
       );
     };
   return (
-    <div className="max-w-md  bg-white shadow-lg rounded-lg overflow-hidden h-screen">
+    <div className='bg-slate-100 flex items-center justify-center h-screen'>
+
+   
+    <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-2 overflow-hidden h-screen">
       {/* searchbar inHeader */ }
       <div className="p-px border-b border-gray-300 flex items-center aboulte">
-        <button className="mr-2 text-gray-500">&larr;</button>
+        <button className=" ml-2 text-black-500 "><FaArrowLeft size={18} />
+        </button>
         {/* <h1 className="text-lg font-semibold">Search Messages</h1> */}
         <div className=" relative  p-4 w-full">
         <input
@@ -148,6 +154,7 @@ const MessageList: React.FC = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

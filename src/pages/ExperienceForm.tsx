@@ -39,16 +39,16 @@ const ExperienceForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-100 flex text-left  justify-center h-screen max-w-md  ">
+    <div className="bg-slate-100 flex text-left justify-center h-screen  ">
       
    
-    <form onSubmit={handleSubmit} className="bg-white flex-col rounded-lg p-2 max-w-md w-full  h-screen">
+    <form onSubmit={handleSubmit} className="bg-white flex-col rounded-lg p-5 max-w-md w-full h-screen">
     <button 
       className="text-gray-600 mb-3 hover:text-gray-800 bg-white-100 hover:bg-gray-100 rounded-xl p-1 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-white-400"
       aria-label="Close"
     >
       <svg
-        className="w-5 h-5"
+        className="w-6 h-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

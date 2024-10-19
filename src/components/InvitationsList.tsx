@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import profImg from '../assets/profile.svg';
 import banner from '../assets/banner.svg';
+import { FaArrowLeft } from "react-icons/fa6";
+
+
 
 interface InvitationCardProps {
   name: string;
@@ -238,9 +241,14 @@ const InvitationsList: React.FC = () => {
 
 
   return (
-    <div className="max-w-md mx-auto p-4">
+    <div className='bg-slate-100 flex text-left  justify-center h-screen'>
+
+   
+
+    <div className="bg-white flex-col rounded-lg p-8 max-w-md w-full  h-screen">
       <div className="flex  items-center mb-4">
-        <button className="text-lg">&larr;</button>
+        <button className="text-lg pr-1"><FaArrowLeft />
+        </button>
         <div className="flex-1">
           <div className="flex items-center">
             <input
@@ -378,6 +386,7 @@ const InvitationsList: React.FC = () => {
         </a>
       </div>
       )}
+    </div>
     </div>
   );
 };

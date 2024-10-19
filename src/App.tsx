@@ -1,6 +1,6 @@
 
 import './App.css'
-import EventRegistration from './pages/RegisterForm'
+// import EventRegistration from './pages/Registration'
 // import ChatScreen from './pages/ChatScreen'
 // import ChatScreen from './pages/MessageInterface'
 // import JobApplicationForm from './pages/JobApplicationForm'
@@ -13,7 +13,7 @@ import EventRegistration from './pages/RegisterForm'
 // import EducationForm from './pages/EducationForm'
 // import MainComponent from './components/MainComponent'
 // import InvitationsList from './components/InvitationsList'
-// import MessageList from './components/MessageList's
+// import MessageList from './components/MessageList'
 // import NotificationsPage from './components/NotificationsPage'
 
 
@@ -36,7 +36,7 @@ function App() {
     {/* <EventCard/> */}
     {/* <JobApplicationForm/> */}
         {/* <ChatScreen/> */}
-        <EventRegistration/>
+     {/* <EventRegistration/> */}
     </>
   )
 }

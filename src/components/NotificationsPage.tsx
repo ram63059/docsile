@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import NotificationItem from './Notificationitem';
+import profileimg from "../assets/profile.svg"
+import organisation from "../assets/organisation.svg"
 
 const NotificationsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('All');
   
   const notifications = [
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'Cascade Institute of Medical Sciences',
       description: 'posted Neuro-Science article for students.',
       reactions: 3327,
@@ -14,7 +16,7 @@ const NotificationsPage: React.FC = () => {
       type: 'post' as const,
     },
     {
-      imageUrl: 'profile.svg',
+      imageUrl: profileimg,
       title: 'Bruhath Nimmnani',
       description: 'posted a question on Neuro-Science article by AIIMS Delhi.',
       reactions: 3327,
@@ -22,7 +24,7 @@ const NotificationsPage: React.FC = () => {
       type: 'question' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'Software Engineer Opening',
       description: 'at Tech Solutions',
       reactions: 1500,
@@ -30,7 +32,7 @@ const NotificationsPage: React.FC = () => {
       type: 'job' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'AI & Robotics Seminar',
       description: 'Join the seminar on the future of AI.',
       reactions: 2000,
@@ -38,7 +40,7 @@ const NotificationsPage: React.FC = () => {
       type: 'seminar' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'Cascade Institute of Medical Sciences',
       description: 'posted Neuro-Science article for students.',
       reactions: 3327,
@@ -46,7 +48,7 @@ const NotificationsPage: React.FC = () => {
       type: 'post' as const,
     },
     {
-      imageUrl: 'profile.svg',
+      imageUrl: profileimg,
       title: 'Bruhath Nimmnani',
       description: 'posted a question on Neuro-Science article by AIIMS Delhi.',
       reactions: 3327,
@@ -54,7 +56,7 @@ const NotificationsPage: React.FC = () => {
       type: 'question' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'Software Engineer Opening',
       description: 'at Tech Solutions',
       reactions: 1500,
@@ -62,7 +64,7 @@ const NotificationsPage: React.FC = () => {
       type: 'job' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'AI & Robotics Seminar',
       description: 'Join the seminar on the future of AI.',
       reactions: 2000,
@@ -70,7 +72,7 @@ const NotificationsPage: React.FC = () => {
       type: 'seminar' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'Cascade Institute of Medical Sciences',
       description: 'posted Neuro-Science article for students.',
       reactions: 3327,
@@ -78,7 +80,7 @@ const NotificationsPage: React.FC = () => {
       type: 'post' as const,
     },
     {
-      imageUrl: 'profile.svg',
+      imageUrl: profileimg,
       title: 'Bruhath Nimmnani',
       description: 'posted a question on Neuro-Science article by AIIMS Delhi.',
       reactions: 3327,
@@ -86,7 +88,7 @@ const NotificationsPage: React.FC = () => {
       type: 'question' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'Software Engineer Opening',
       description: 'at Tech Solutions',
       reactions: 1500,
@@ -94,7 +96,7 @@ const NotificationsPage: React.FC = () => {
       type: 'job' as const,
     },
     {
-      imageUrl: 'organisation.svg',
+      imageUrl: organisation,
       title: 'AI & Robotics Seminar',
       description: 'Join the seminar on the future of AI.',
       reactions: 2000,
@@ -108,8 +110,10 @@ const NotificationsPage: React.FC = () => {
 
 
   return (
+    <div className='bg-slate-100 flex items-center justify-center h-screen'>
+
     
-    <div className="max-w-md  mx-auto bg-white shadow-lg rounded-lg overflow-hidden h-screen ">
+    <div className="max-w-md w-full mx-auto bg-white shadow-lg rounded-lg overflow-hidden h-screen ">
       {/* Header */}
       <div className="p-4 border-b border-gray-300 flex items-center">
         <button className="mr-2 text-gray-500">&larr;</button>
@@ -149,6 +153,8 @@ const NotificationsPage: React.FC = () => {
         ))}
       </div>
     </div>
+    </div>
+    
   );
 };
 

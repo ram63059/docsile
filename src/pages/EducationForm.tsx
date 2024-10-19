@@ -22,9 +22,24 @@ const EducationForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-100 flex text-left  justify-center h-screen max-w-md  " >
-      <form onSubmit={handleSubmit} className="bg-white flex-col rounded-lg p-4 max-w-md w-full  h-screen">
-        <h2 className="text-2xl font-semibold mb-4"> Add Education </h2>
+    <div className="bg-slate-100 flex text-left  justify-center h-screen  " >
+      <form onSubmit={handleSubmit} className="bg-white flex-col rounded-lg p-5 max-w-md w-full h-screen">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+
+        <h2 className="text-2xl font-semibold mt-2 mb-4"> Add Education </h2>
 
         <p className='text-xs'>(*indicates required)</p>
 

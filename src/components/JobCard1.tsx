@@ -45,8 +45,24 @@ const JobCard1: React.FC<JobCard1Props> = ({
   mailId,
 }) => {
   return (
-    <div className=" flex items-center justify-center h-screen p-4">
-      <div className=" rounded-lg p-2 pt-8 max-w-md w-full h-screen">
+    <div className="bg-slate-100 flex items-center justify-center h-screen p-4">
+      <div className="bg-white  rounded-lg p-2 pt-6 max-w-md w-full h-screen">
+
+      <svg
+        className="w-6 h-6 ml-2 mb-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+
         {/* Top Section with Logo, Job Title, and Company Info */}
         <div className="flex items-start mb-4 text-left p-2">
           <img
