@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 import { BsGlobeCentralSouthAsia } from "react-icons/bs";
 import { IoPeopleSharp } from "react-icons/io5";
 import { MdOutlineArrowDropDown } from "react-icons/md";
@@ -39,20 +39,31 @@ const Post: React.FC = () => {
 
   const isPostDisabled = postContent.trim().length === 0;
 
-  const [, setSelectedImage] = useState<File | null>(null);
 
-  const fileInputRef = useRef<HTMLInputElement | null>(null); // Reference to the hidden file input
+  const fileInputRef = useRef<HTMLInputElement | null>(null); 
 
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]; // Get the first selected file
-    if (file) {
-      setSelectedImage(file); // Store the file for further use
-      // console.log('Selected image:', file);
-    }
-  };
+  
 
   const handleSvgClick = () => {
-    fileInputRef.current?.click(); // Trigger the file input click when the SVG is clicked
+    fileInputRef.current?.click(); 
+  };
+
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
+  
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    if (file ) {
+      setSelectedImage(file);
+      const imagePreviewUrl = URL.createObjectURL(file);
+      setPreviewUrl(imagePreviewUrl);
+    }
+  };
+  console.log(selectedImage);
+  const handleRemoveImage = () => {
+    setSelectedImage(null);
+    setPreviewUrl(null);
   };
 
   return (
@@ -89,7 +100,7 @@ const Post: React.FC = () => {
                       Anyone <MdOutlineArrowDropDown />
                     </Button>
                   </SheetTrigger>
-                  <SheetContent side="top">
+                  <SheetContent side="bottom">
                     <div className="flex flex-col">
                       <SheetTitle>Who can see your post?</SheetTitle>
                     </div>
@@ -121,7 +132,7 @@ const Post: React.FC = () => {
                       </div>
                       <div className=" items-center max-w-md flex flex-row justify-between p-4">
                         <div className="flex flex-row items-center">
-                          <div className="p- bg-gray-300 rounded-full mr-2">
+                          <div className="p-2 bg-gray-300 rounded-full mr-2">
                             <IoPeopleSharp size={20} />
                           </div>
                           <div>
@@ -170,17 +181,38 @@ const Post: React.FC = () => {
             value={postContent}
             onChange={(e) => setPostContent(e.target.value)}
           />
+          
         </div>
-
-        <div className="flex flex-row justify-end p-2 items-center">
+       <div>
+       {previewUrl && (
+              <div className=" relative mt-4 inline-block">
+                <button
+                  onClick={handleRemoveImage}
+                  className="absolute top-1 right-1 mt-1  bg-gray-400 rounded-full p-1 px-2 hover:bg-gray-500 focus:outline-none"
+                    >
+                    ✕
+                  </button>
+                <img
+                  src={previewUrl}
+                  alt="Selected"
+                  className="max-w-full h-auto rounded-md shadow-lg"
+                />
+                 
+              </div>
+            )}
+       </div>
+        <div className="flex flex-row justify-end  items-center">
+      
           <div>
             <input
               type="file"
               accept="image/*"
               ref={fileInputRef}
-              style={{ display: "none" }} // Hide the input
+              className="hidden"
+              style={{ display: "none" }} 
               onChange={handleImageChange}
             />{" "}
+             
             <div onClick={handleSvgClick} className="cursor-pointer">
               <svg
                 width="24"
@@ -220,7 +252,7 @@ const Post: React.FC = () => {
             </div>
           </div>
 
-          <div className="felx">
+          <div className="flex">
            
               <Sheet>
                 <SheetTrigger asChild>
@@ -243,7 +275,7 @@ const Post: React.FC = () => {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="bottom">
-                  <div className="grid grid-cols-3 grid-rows-3  gap-12 p-12 ">
+                  <div className="grid grid-cols-3 grid-rows-3  gap-12 p-12  ">
                     
                               {images.map((image, index) => (
                     <div

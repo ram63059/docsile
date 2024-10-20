@@ -62,7 +62,7 @@ const SheetContent = React.forwardRef<
       className={cn(
         sheetVariants({ side }), 
        `bg-slate-100 flex text-left flex-col justify-center max-w-md m-auto ${
-    side !== "bottom" ? "rounded-b-3xl" : "" }`,
+    side !== "bottom" ? "rounded-b-3xl" : "rounded-t-3xl" }`,
         className
       )}
       {...props}

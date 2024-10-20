@@ -6,7 +6,7 @@ import './App.css'
 // import JobApplicationForm from './pages/JobApplicationForm'
 // import EventCard from './pages/EventCard'
 // import Membership from './pages/Membership'
-// import Post from './pages/Post'
+import Post from './pages/Post'
 // import Certifications from './pages/Certifications'
 // import ExperienceForm from './pages/ExperienceForm'
 // import JobsApp from './components/JobsApp'
@@ -30,7 +30,7 @@ function App() {
     {/* <EducationForm/> */}
     {/* <ExperienceForm/> */}
     {/* <Certifications/>  */}
-    {/* <Post/> */}
+    <Post/>
     {/* <Membership/> */}
     
     {/* <EventCard/> */}
